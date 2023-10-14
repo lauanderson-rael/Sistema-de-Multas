@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <section>
+    <h1>SISTEMA DE MULTAS</h1>
+    Velocidade do carro: <input  type="number" name="txtvel" id="txtvel"> km/h
+    <input class="botao" type="button" value="Verificar" onclick="calcular()">
+    <div id="res"> 
+
+    </div>
+    <script>
+        // USANDO CLICK NORMAL PARA CHAMAR A FUNÇÃO
+        function calcular(){
+            var txtv = window.document.getElementById('txtvel')
+            var res = window.document.getElementById('res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p> Sua velocidade atual é de <strong>${vel}</strong> km/h</p>`
+            if (vel>=60){
+                res.innerHTML+= `<p>Voce ultrapassou o limite de velocidade permitido.<strong> MULTADO!</strong></p>`
+            }
+            res.innerHTML += `<p> Dirija sempre com o sinto de segurança!</p>`
+
+            
+        }
+
+        // USANDO BOTÃO ENTER PARA CHAMAR A FUNÇÃO
+            document.addEventListener('keypress', function(calcular) {
+            if (event.key === 'Enter') {
+             // Ações a serem executadas quando o Enter for pressionado
+            var txtv = window.document.getElementById('txtvel')
+            var res = window.document.getElementById('res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p> Sua velocidade atual é de <strong>${vel}</strong> km/h</p>`
+            if (vel>=60){
+                res.innerHTML+= `<p>Voce ultrapassou o limite de velocidade permitido.<strong> MULTADO!</strong></p>`
+            }
+            res.innerHTML += `<p> Dirija sempre com o sinto de segurança!</p>`
+            }});
+            
+        
+    </script>
+    </section>
+    
+    
+</body>
+</html>
+
+    
